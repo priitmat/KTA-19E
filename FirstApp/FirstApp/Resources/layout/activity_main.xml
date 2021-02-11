@@ -21,12 +21,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/button1" />
     <Button
-        android:text="Calculator"
+        android:text="@string/calculator_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/calculatorButton" />   
     <Button
-        android:text="Webview"
+        android:text="@string/webview_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/webButton" />

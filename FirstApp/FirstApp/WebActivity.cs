@@ -22,7 +22,7 @@ namespace FirstApp
             SetContentView(Resource.Layout.web_layout);
             // Create your application here
 
-            var aadress = Intent.GetStringExtra("address");
+            var aadress = Intent.GetStringExtra(Constants.AddressKey);
             _webView = FindViewById<WebView>(Resource.Id.webView1);
             _webView.Settings.JavaScriptEnabled = true;
             _webView.SetWebViewClient(new SimpleWebViewClient());
@@ -37,7 +37,7 @@ namespace FirstApp
                 return true;
             }
 
-            return base.OnKeyDown(keyCode, e);
+            return base.OnKeyDown(keyCode, e);        
         }
     }
 }

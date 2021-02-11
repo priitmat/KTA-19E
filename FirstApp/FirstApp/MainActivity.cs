@@ -4,11 +4,12 @@ using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
 using Android.Content;
+using Xamarin.Essentials;
 
 namespace FirstApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    [Activity(Label = "@string/app_name", MainLauncher = true)]
+    public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -23,8 +24,9 @@ namespace FirstApp
             var webButton = FindViewById<Button>(Resource.Id.webButton);
 
             button.Click += delegate
-            {
-                textView.Text = "Hello World!";
+            {                
+                var level = Battery.ChargeLevel;
+                textView.Text = level.ToString();
             };
 
             calculatorButton.Click += delegate
@@ -36,7 +38,7 @@ namespace FirstApp
             webButton.Click += delegate
             {
                 Intent intent = new Intent(this, typeof(WebActivity));
-                intent.PutExtra("address", "https://m.delfi.ee/");
+                intent.PutExtra(Constants.AddressKey, Constants.DefaultUrlToLoad);
                 StartActivity(intent);
             };
         }
