@@ -24,5 +24,10 @@
         android:text="Calculator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/calculatorButton" />    
+        android:id="@+id/calculatorButton" />   
+    <Button
+        android:text="Webview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/webButton" />
 </LinearLayout>

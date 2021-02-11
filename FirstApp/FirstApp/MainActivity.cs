@@ -20,6 +20,7 @@ namespace FirstApp
             var textView = FindViewById<TextView>(Resource.Id.textView1);
             var button = FindViewById<Button>(Resource.Id.button1);
             var calculatorButton = FindViewById<Button>(Resource.Id.calculatorButton);
+            var webButton = FindViewById<Button>(Resource.Id.webButton);
 
             button.Click += delegate
             {
@@ -29,6 +30,13 @@ namespace FirstApp
             calculatorButton.Click += delegate
             {
                 Intent intent = new Intent(this, typeof(CalculatorActivity));
+                StartActivity(intent);
+            };
+
+            webButton.Click += delegate
+            {
+                Intent intent = new Intent(this, typeof(WebActivity));
+                intent.PutExtra("address", "https://m.delfi.ee/");
                 StartActivity(intent);
             };
         }
