@@ -16,5 +16,6 @@ namespace FirstApp.Models
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public int KW { get; set; }
+        public int Image { get; set; }
     }
 }

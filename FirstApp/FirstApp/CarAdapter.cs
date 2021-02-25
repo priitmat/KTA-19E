@@ -46,6 +46,7 @@ namespace FirstApp
             view.FindViewById<TextView>(Resource.Id.manufacturerTextView).Text = _items[position].Manufacturer;
             view.FindViewById<TextView>(Resource.Id.modelTextView).Text = _items[position].Model;
             view.FindViewById<TextView>(Resource.Id.kwTextView).Text = _items[position].KW.ToString();
+            view.FindViewById<ImageView>(Resource.Id.carImageView).SetImageResource(_items[position].Image);
             return view;
         }
     }
