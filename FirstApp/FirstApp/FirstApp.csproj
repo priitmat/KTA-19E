@@ -62,8 +62,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CalculatorActivity.cs" />
+    <Compile Include="CarAdapter.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\Car.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SampleListActivity.cs" />
