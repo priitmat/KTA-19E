@@ -22,6 +22,7 @@ namespace FirstApp
             var button = FindViewById<Button>(Resource.Id.button1);
             var calculatorButton = FindViewById<Button>(Resource.Id.calculatorButton);
             var webButton = FindViewById<Button>(Resource.Id.webButton);
+            var toListActivityButton = FindViewById<Button>(Resource.Id.toListButton);
 
             button.Click += delegate
             {                
@@ -39,6 +40,12 @@ namespace FirstApp
             {
                 Intent intent = new Intent(this, typeof(WebActivity));
                 intent.PutExtra(Constants.AddressKey, Constants.DefaultUrlToLoad);
+                StartActivity(intent);
+            };
+
+            toListActivityButton.Click += delegate
+            {
+                Intent intent = new Intent(this, typeof(SampleListActivity));                
                 StartActivity(intent);
             };
         }

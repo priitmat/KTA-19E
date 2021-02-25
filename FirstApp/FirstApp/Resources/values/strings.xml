@@ -3,5 +3,6 @@
     <string name="action_settings">Settings</string>
 	<string name="calculator_button">Open Calculator</string>
 	<string name="webview_button">Open Webview</string>
+	<string name="tolist_button">Open list activity</string>
 
 </resources>
