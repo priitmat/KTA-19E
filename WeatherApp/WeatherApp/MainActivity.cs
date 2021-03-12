@@ -28,8 +28,10 @@ namespace WeatherApp
                 var data = await dataService.GetCityWeather(cityEditText.Text);
 
                 tempTextView.Text = $"{data.main.temp.ToString()} C";
-                //var imageBitmap = Android.Net.Uri.Parse("http://openweathermap.org/img/wn/10d@2x.png");
-                //weatherImage.SetImageURI(imageBitmap);                
+                
+                
+                using (var bm = await dataService.GetImageFromUrl($"https://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png"))
+                    weatherImage.SetImageBitmap(bm);
             };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

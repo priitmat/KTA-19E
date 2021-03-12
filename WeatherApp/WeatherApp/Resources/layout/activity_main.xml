@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +20,7 @@
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="100dp"        
         android:id="@+id/weatherImage" />
     <TextView
         android:text="10"
