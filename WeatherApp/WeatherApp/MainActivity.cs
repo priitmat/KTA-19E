@@ -3,7 +3,7 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
-using System.Net.Http;
+using WeatherApp.Services;
 
 namespace WeatherApp
 {
@@ -16,13 +16,21 @@ namespace WeatherApp
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+            var dataService = new RemoteDataService();
 
-            var apiKey = "a519d2565f58343b5f157d056e658aca";
+            var cityEditText = FindViewById<EditText>(Resource.Id.cityTextView);
+            var searchButton = FindViewById<Button>(Resource.Id.searchButton);
+            var tempTextView = FindViewById<TextView>(Resource.Id.tempTextView);
+            var weatherImage = FindViewById<ImageView>(Resource.Id.weatherImage);
 
-            var client = new HttpClient();
-            var response = await client.GetStringAsync($"https://api.openweathermap.org/data/2.5/weather?q=tallinn&appid={apiKey}");
+            searchButton.Click += async delegate
+            {
+                var data = await dataService.GetCityWeather(cityEditText.Text);
 
-
+                tempTextView.Text = $"{data.main.temp.ToString()} C";
+                //var imageBitmap = Android.Net.Uri.Parse("http://openweathermap.org/img/wn/10d@2x.png");
+                //weatherImage.SetImageURI(imageBitmap);                
+            };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
