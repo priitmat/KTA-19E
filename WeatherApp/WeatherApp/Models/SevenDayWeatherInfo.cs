@@ -15,7 +15,7 @@ namespace WeatherApp.Models {
         public double lon { get; set; }
         public string timezone { get; set; }
         public int timezone_offset { get; set; }
-        public IList<Daily> daily { get; set; }
+        public List<Daily> daily { get; set; }
     }
 
     public class Temp {
@@ -52,7 +52,7 @@ namespace WeatherApp.Models {
         public double dew_point { get; set; }
         public double wind_speed { get; set; }
         public int wind_deg { get; set; }
-        public IList<Weather> weather { get; set; }
+        public List<Weather> weather { get; set; }
         public int clouds { get; set; }
         public double pop { get; set; }
         public double uvi { get; set; }

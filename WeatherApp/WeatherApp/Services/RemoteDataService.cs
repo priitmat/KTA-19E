@@ -14,21 +14,22 @@ using WeatherApp.Models;
 using System.Threading.Tasks;
 using Android.Graphics;
 
+
 namespace WeatherApp.Services {
     public class RemoteDataService {
-        const string ApiKey = "d673db93de894f42b20900619c789cad";
+
         public async Task<WeatherInfo> GetCityWeather(string city) {
             var client = new HttpClient();
-            var response = await client.GetStringAsync($"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={ApiKey}");
+            var response = await client.GetStringAsync($"https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={Constants.ApiKey}");
             var data = JsonConvert.DeserializeObject<WeatherInfo>(response);
             return data;
         }
 
-        public async Task Get7DayWeather(double lat, double lon) {
+        public async Task<List<Daily>> Get7DayWeather(double lat, double lon) {
             var client = new HttpClient();
-            var response = await client.GetStringAsync($"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts&units=metric&appid={ApiKey}");
+            var response = await client.GetStringAsync($"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude=current,minutely,hourly,alerts&units=metric&appid={Constants.ApiKey}");
             var data = JsonConvert.DeserializeObject<SevenDayWeatherInfo>(response);
-            Console.WriteLine(data.daily[0].temp.max);
+            return data.daily;
         }
 
         public async Task<Bitmap> GetImageFromUrl(string url) {
