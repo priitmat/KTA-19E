@@ -9,10 +9,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FirstApp.Models
-{
-    public class Car
-    {
+namespace firstApp.Models {
+    public class Car {
         public string Manufacturer { get; set; }
         public string Model { get; set; }
         public int KW { get; set; }

@@ -4,27 +4,26 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using FirstApp.Models;
+using firstApp.Models;
+using FirstApp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FirstApp
-{
+namespace firstApp {
+
     [Activity(Label = "SampleListActivity")]
-    public class SampleListActivity : Activity
-    {
+    public class SampleListActivity :Activity {
         List<Car> items;
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
+        protected override void OnCreate(Bundle savedInstanceState) {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.simplelist_layout);
 
             var listView = FindViewById<ListView>(Resource.Id.listView1);
 
-            items = new List<Car> 
-            { 
+            items = new List<Car>
+            {
                 new Car { Manufacturer = "Ford", Model = "Focus", KW = 100, Image = Resource.Drawable.ford },
                 new Car { Manufacturer = "Volkswagen", Model = "Passat", KW = 45, Image = Resource.Drawable.volkswagen },
                 new Car { Manufacturer = "Ford2", Model = "Focus2", KW = 45 },
@@ -47,10 +46,17 @@ namespace FirstApp
 
             listView.Adapter = new CarAdapter(this, items);
 
-            listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args)
-            {
+            listView.ItemClick += delegate (object sender, AdapterView.ItemClickEventArgs args) {
                 var car = items[args.Position].Manufacturer;
-                Toast.MakeText(this, car, ToastLength.Long).Show();
+
+                if(!items[args.Position].Image.Equals(null)) {
+                    Intent intent = new Intent(this, typeof(CarActivity));
+                    intent.PutExtra("image", items[args.Position].Image);
+                    StartActivity(intent);
+                }
+                else { Toast.MakeText(this, car, ToastLength.Long).Show(); }
+
+
             };
 
             // Create your application here

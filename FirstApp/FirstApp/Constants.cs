@@ -9,11 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace FirstApp
-{
-    public class Constants
-    {
+namespace firstApp {
+    public class Constants {
         public const string AddressKey = "Address";
-        public const string DefaultUrlToLoad = "https://m.delfi.ee/";
-    }    
+        public const string DefaultUrlToLoad = "https://google.com/";
+    }
 }

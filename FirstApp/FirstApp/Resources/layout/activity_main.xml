@@ -1,38 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout     
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:gravity="center"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/textView1" />
-    <Button
-        android:text="Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button1" />
-    <Button
-        android:text="@string/calculator_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/calculatorButton" />   
-    <Button
-        android:text="@string/webview_button"
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:gravity="center"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:ignore="XmlErrors">
+	<TextView
+		android:text="Large Text"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:minWidth="25px"
+		android:minHeight="25px"
+		android:id="@+id/textView1"
+		android:gravity="center"/>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center">
+		<Button
+			android:text="Increase"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/increase_btn" />
+		<Button
+			android:text="Decrease"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/decrease_btn"/>
+		</LinearLayout>
+
+
+
+	<Button
+		android:text="Calculator"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/calculator_btn"
+		/>
+	<Button
+        android:text="Webview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/webButton" />
-    <Button
-        android:text="@string/tolist_button"
+	<Button
+		android:text="Essentials"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/essentials_btn"
+		/>
+	<Button
+        android:text="To List activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/toListButton" />
+	
 </LinearLayout>
