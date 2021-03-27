@@ -3,7 +3,8 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Runtime;
 using Android.Widget;
-using WeatherApp.Services;
+using WeatherApp.Core.Services;
+using Android.Graphics;
 
 namespace WeatherApp
 {
@@ -28,10 +29,10 @@ namespace WeatherApp
                 var data = await dataService.GetCityWeather(cityEditText.Text);
 
                 tempTextView.Text = $"{data.main.temp.ToString()} C";
-                
-                
-                using (var bm = await dataService.GetImageFromUrl($"https://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png"))
-                    weatherImage.SetImageBitmap(bm);
+
+                var bm = await dataService.GetImageFromUrl($"https://openweathermap.org/img/wn/{data.weather[0].icon}@2x.png");
+                var bitmap = await BitmapFactory.DecodeByteArrayAsync(bm, 0, bm.Length);
+                   weatherImage.SetImageBitmap(bitmap);
             };
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)

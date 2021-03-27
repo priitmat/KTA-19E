@@ -1,15 +1,6 @@
-﻿using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace WeatherApp.Models
+namespace WeatherApp.Core.Models
 {
     public class WeatherInfo
     {
@@ -73,5 +64,5 @@ namespace WeatherApp.Models
         public int sunset { get; set; }
     }
 
-   
+
 }
