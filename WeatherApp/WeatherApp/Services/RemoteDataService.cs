@@ -14,7 +14,6 @@ using WeatherApp.Models;
 using System.Threading.Tasks;
 using Android.Graphics;
 
-
 namespace WeatherApp.Services {
     public class RemoteDataService {
 

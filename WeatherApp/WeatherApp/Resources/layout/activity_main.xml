@@ -5,30 +5,80 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
-    <EditText
+   >
+
+
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center_horizontal">
+
+		<EditText
+			android:inputType="text"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:id="@+id/cityTextView"
+            android:layout_gravity="left"/>
+		<Button
+			android:text="Search"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+			android:id="@+id/searchButton"
+			/>
+
+	
+   
+    <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:id="@+id/cityTextView" />
-    <Button
-        android:text="Search"
-        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:padding="10dp"   
+        >
+        <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/searchButton" />
+           android:id="@+id/atm" 
+            android:textAppearance="?android:attr/textAppearanceLarge"></TextView>
     <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+        
         android:layout_width="100dp"
         android:layout_height="100dp"        
         android:id="@+id/weatherImage" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+            >
     <TextView
-        android:text="10"
+
+                android:gravity="center_horizontal"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
+
         android:id="@+id/tempTextView" />
+             <TextView
+
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:id="@id/feelslike" />
+
+            </LinearLayout>
+            
+    </LinearLayout>
+    <LinearLayout
+      
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:id="@+id/separator"
+        
+/>
+    
       <ListView
         android:minWidth="25px"
         android:minHeight="25px"
